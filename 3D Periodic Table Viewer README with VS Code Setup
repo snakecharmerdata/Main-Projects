@@ -1,0 +1,183 @@
+
+# 3D Periodic Table Viewer
+
+An interactive 3D application that visualizes all 118 chemical elements, allowing users to explore their atomic structures, properties, and real-world applications. The program renders each element as a 3D atomic model with its electrons and nucleus, while providing comprehensive information about its composition, uses, and significance in a user-friendly interface.
+
+## Features
+
+- **Complete Periodic Table**: Access to all 118 elements with accurate data
+- **Interactive 3D Visualization**: View atomic models with nucleus and electron shells
+- **Comprehensive Information**: Details on each element's properties, uses, and atomic structure
+- **Customizable View**: Rotate, zoom, and auto-rotate the 3D models
+- **Educational Content**: In-depth descriptions and atomic structure information
+
+## Screenshots
+
+*[Screenshots would be placed here]*
+
+## Installation
+
+### Prerequisites
+
+- Python 3.7+
+- PyQt5
+- PyOpenGL
+- NumPy
+
+### Setup
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/3d-periodic-table.git
+   cd 3d-periodic-table
+   ```
+
+2. Install required packages:
+   ```
+   pip install -r requirements.txt
+   ```
+
+3. Run the application:
+   ```
+   python main.py
+   ```
+
+### Setting up in Visual Studio Code with a Virtual Environment
+
+Follow these steps to set up the Elements project in VS Code with a dedicated virtual environment:
+
+1. **Install Visual Studio Code**:
+   - Download and install from [code.visualstudio.com](https://code.visualstudio.com/)
+   - Install the Python extension from the VS Code Marketplace
+
+2. **Open the Elements Project**:
+   ```
+   code /path/to/Elements
+   ```
+   Or use File → Open Folder... from within VS Code
+
+3. **Create a Virtual Environment**:
+   - Open a terminal in VS Code (Terminal → New Terminal)
+   - Create a virtual environment in the project folder:
+   
+   **For macOS/Linux**: Call your folder on the desktop 'Elements'
+   ```
+   python3 -m venv Elements_env
+   ```
+   
+   **For Windows**:
+   ```
+   python -m venv Elements_env
+   ```
+
+4. **Activate the Virtual Environment**:
+   
+   **For macOS/Linux**:
+   ```
+   source Elements_env/bin/activate
+   ```
+   
+   **For Windows**:
+   ```
+   Elements_env\Scripts\activate
+   ```
+   
+   *You should see the virtual environment name in your terminal prompt, indicating it's active.*
+
+5. **Select the Python Interpreter in VS Code**:
+   - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS)
+   - Type "Python: Select Interpreter"
+   - Choose the interpreter from your newly created virtual environment (`Elements_env`)
+
+6. **Install Required Packages**:
+   ```
+   pip install PyQt5 PyOpenGL PyOpenGL_accelerate numpy
+   ```
+
+7. **Configure Launch Settings** (optional):
+   - Create a `.vscode` folder in your project root if it doesn't exist
+   - Inside it, create a `launch.json` file with the following contents:
+   ```json
+   {
+       "version": "0.2.0",
+       "configurations": [
+           {
+               "name": "Run Elements App",
+               "type": "python",
+               "request": "launch",
+               "program": "${workspaceFolder}/main.py",
+               "console": "integratedTerminal",
+               "justMyCode": true
+           }
+       ]
+   }
+   ```
+
+8. **Run the Application**:
+   - Press F5 or click the Run button in VS Code
+   - Alternatively, in the terminal with the virtual environment activated:
+   ```
+   python main.py
+   ```
+
+9. **Deactivate the Virtual Environment** when finished:
+   ```
+   deactivate
+   ```
+
+## Usage
+
+- Use the dropdown menu to select different elements
+- View element information in the sidebar panel
+- Rotate the 3D model using mouse or sliders
+- Click "Start Auto-Rotation" for automatic animation
+- Zoom in/out using the slider or mouse wheel
+- Read detailed descriptions and atomic structure information
+
+## Project Structure
+
+- `main.py`: Application entry point
+- `periodic_table_window.py`: Main application window and UI
+- `element_3d_view.py`: 3D visualization using OpenGL
+- `element_list.py`: Complete dataset of all elements
+- `element_data_adapter.py`: Adapter for element data compatibility
+- `element_descriptions.py`: Detailed textual descriptions
+- `element_atomic_structure.py`: Atomic structure calculations
+
+## Implementation Details
+
+The application is built using:
+
+- **PyQt5** for the user interface
+- **PyOpenGL** for 3D rendering
+- **NumPy** for numerical calculations
+
+The 3D visualization represents:
+- Protons (red) and neutrons (blue) in the nucleus
+- Electron shells arranged according to the Bohr model
+- Color-coding based on element categories
+
+## Troubleshooting
+
+- **OpenGL Import Error**: If you encounter issues with PyOpenGL, try reinstalling with:
+  ```
+  pip uninstall PyOpenGL PyOpenGL_accelerate
+  pip install PyOpenGL PyOpenGL_accelerate
+  ```
+
+- **PyQt5 Display Issues**: For high-DPI display problems, add this at the beginning of `main.py`:
+  ```python
+  # Add before creating QApplication
+  import os
+  os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
+  ```
+
+## License
+
+[Your License Information]
+
+## Acknowledgments
+
+- Periodic Table data from [Data Source]
+- Element descriptions compiled from various scientific sources
+- Built with inspiration from educational chemistry resources
