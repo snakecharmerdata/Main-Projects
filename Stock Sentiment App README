@@ -1,0 +1,59 @@
+
+# Stock Sentiment App
+
+A desktop application that searches for news articles about stocks or companies and performs sentiment analysis to help investors gauge market sentiment.
+
+## Features
+
+- **Web Article Search**: Search for latest news articles using Bing search engine
+- **Date Filtering**: Filter articles by time period (last 24 hours, week, month, or custom date)
+- **Sentiment Analysis**: Analyze article sentiment using both TextBlob and VADER analysis engines
+- **Sentiment Filtering**: Filter search results by positive, neutral, or negative sentiment
+- **Content Preview**: View article previews in search results
+- **Full Article View**: Read complete articles with sentiment breakdown
+- **CSV Export**: Save search results to CSV file for further analysis
+
+## How It Works
+
+1. Enter a stock ticker or company name in the search field
+2. Select desired date filter options
+3. Click "Search" to find relevant news articles
+4. Articles are analyzed for sentiment and displayed with color-coded sentiment indicators
+5. Filter results by sentiment (positive, neutral, negative)
+6. Click "View Full Article" to read the complete content with detailed sentiment scores
+
+## Technical Details
+
+- Built with Python and Tkinter for the GUI
+- Uses BeautifulSoup for web scraping
+- Implements multi-threading for responsive UI during searches
+- Employs TextBlob and VADER for dual sentiment analysis approaches
+- Exports data to CSV format for integration with other tools
+
+## Requirements
+
+- Python 3.x
+- Required packages:
+  - tkinter
+  - requests
+  - beautifulsoup4
+  - textblob
+  - vaderSentiment
+
+## Installation
+
+```bash
+# Clone or download the repository
+# Install required packages
+pip install requests beautifulsoup4 textblob vaderSentiment
+
+# Run the application
+python "Web Search.py"
+```
+
+## Future Enhancements
+
+- Historical sentiment tracking
+- Visualization of sentiment trends
+- Additional search sources
+- Customizable sentiment thresholds
